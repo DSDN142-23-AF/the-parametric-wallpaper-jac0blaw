@@ -1,8 +1,9 @@
 //your parameter variables go here!
-let res = 20;//resolution
-let space = 5; //Size Perlin field;
-let size = 3;//size of object
-var r = random(255)
+let noiseScale = 20;//resolution
+let space = 4; //Size Perlin field;
+let size = 2;//size of object
+let noiseLevel = 0.2;
+
 
 
 function setup_wallpaper(pWallpaper) {
@@ -17,13 +18,13 @@ function setup_wallpaper(pWallpaper) {
 }
   
 function wallpaper_background() {
-  background(100, 100, 200); //light honeydew green colour;
-  for (x = 0; x < width; x += space) {// x is equal to 0 when x is smaller then width plus or equal space in perlin field
-    for (y = 0; y < height; y += space) { //y is equal to 0 when y is smaller then height plus or equal space in perlin field
-      var n = noise(x * res, y * res);//noise  = n = resolution times y and x 
-      stroke(n * 10, n * 20, n * 155, 100);//colour times noise using stroke
-      strokeWeight(12); //stroke
-      if (n<0.5){
+  background(100, 100, 100); //bg
+  for (x = 0; x < width; x += space) { //scale input cords
+    for (y = 0; y < height; y += space) { //scale input cords
+      var n = noiseLevel * noise (x * noiseScale, y * noiseScale);
+      stroke(n * 200, n * 200, n * 255, 100);//colour times noise using stroke
+      strokeWeight(12); //strokeweight
+      if (n<0.5){ //if noise is less than
       line(x, y, x + size, y + size); //object
       }
     }    
