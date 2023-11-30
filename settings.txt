@@ -10,45 +10,341 @@ Your final settings.txt will look something like this when you are finished:
 Wallpaper 1:
 
 //your parameter variables go here!
-let rect_width  = 20;
-let rect_height = 20;
-let paramter1 = 10;
-let paramter2 = true;
-let paramter3 = 50; 
-let paramter4 = 0; 
-let paramter5 = 60;
+
+let noiseScale = 100;//NoiseScale
+let space = 10; //Size Perlin field;
+let size = 10; //Size of object
+let noiseLevel = 0.9;
+//update colour(26), strokeweight(27), bg(22) on lines mentioned
+
+
 
 function setup_wallpaper(pWallpaper) {
-  pWallpaper.output_mode(GRID_WALLPAPER);
-  pWallpaper.resolution(NINE_LANDSCAPE);
+  pWallpaper.output_mode(GLIDE_WALLPAPER);
+  pWallpaper.resolution(A3);
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
-  pWallpaper.grid_settings.cell_width  = 100;
-  pWallpaper.grid_settings.cell_height = 100;
+  pWallpaper.grid_settings.cell_width  = 200;
+  pWallpaper.grid_settings.cell_height = 200;
   pWallpaper.grid_settings.row_offset  = 50;
 }
+  
+function wallpaper_background() {
+  background(20, 255, 25); //bg
+  for (x = 0; x < width; x += space) { //scale x input cords
+    for (y = 0; y < height; y += space) { //scale y input cords
+      var n = noiseLevel * noise (x * noiseScale, y * noiseScale);
+      stroke(n * 10, n * 255, n * 50, 100);//colour the noise algorithm
+      strokeWeight(15); //strokeweight
+      if (n<0.5){ //if noise is less than
+      line(x, y, x + size, y + size); //object
+      }
+    }    
+  }
+}
+
 
 /////////////////////////////////
 
 Wallpaper 2:
 
 //your parameter variables go here!
-let rect_width  = 10;
-let rect_height = 10;
-let paramter1 = 20;
-let paramter2 = false;
-let paramter3 = 50; 
-let paramter4 = 80; 
-let paramter5 = 30;
+let noiseScale = 10;//NoiseScale
+let space = 7; //Size Perlin field;
+let size = 1; //Size of object
+let noiseLevel = 0.8;
+//update colour(26), strokeweight(27), bg(22) on lines mentioned
+
+
 
 function setup_wallpaper(pWallpaper) {
-  pWallpaper.output_mode(GRID_WALLPAPER);
-  pWallpaper.resolution(NINE_LANDSCAPE);
+  pWallpaper.output_mode(GLIDE_WALLPAPER);
+  pWallpaper.resolution(A3);
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
-  pWallpaper.grid_settings.cell_width  = 100;
-  pWallpaper.grid_settings.cell_height = 100;
-  pWallpaper.grid_settings.row_offset  = 0;
+  pWallpaper.grid_settings.cell_width  = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 50;
+}
+  
+function wallpaper_background() {
+  background(200, 25, 25); //bg
+  for (x = 0; x < width; x += space) { //scale x input cords
+    for (y = 0; y < height; y += space) { //scale y input cords
+      var n = noiseLevel * noise (x * noiseScale, y * noiseScale);
+      stroke(n * 100, n * 25, n * 0, 100);//colour the noise algorithm
+      strokeWeight(15); //strokeweight
+      if (n<0.5){ //if noise is less than
+      line(x, y, x + size, y + size); //object
+      }
+    }    
+  }
+}
+
+/////////////////////////////////
+
+Wallpaper 3:
+
+//your parameter variables go here!
+let noiseScale = 100;//NoiseScale
+let space = 15; //Size Perlin field;
+let size = 8; //Size of object
+let noiseLevel = 0.5;
+//update colour(26), strokeweight(27), bg(22) on lines mentioned
+
+
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GLIDE_WALLPAPER);
+  pWallpaper.resolution(A3);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 50;
+}
+  
+function wallpaper_background() {
+  background(255, 255, 255); //bg
+  for (x = 0; x < width; x += space) { //scale x input cords
+    for (y = 0; y < height; y += space) { //scale y input cords
+      var n = noiseLevel * noise (x * noiseScale, y * noiseScale);
+      stroke(n * 0, n * 236, n * 255, 150);//colour the noise algorithm
+      strokeWeight(10); //strokeweight
+      if (n<0.5){ //if noise is less than
+      line(x, y, x + size, y + size); //object
+      }
+    }    
+  }
+}
+
+/////////////////////////////////
+
+Wallpaper 4:
+
+//your parameter variables go here!
+let noiseScale = 100;//NoiseScale
+let space = 10; //Size Perlin field;
+let size = 10; //Size of object
+let noiseLevel = 0.9; //NoiseLevel
+//update colour(26), strokeweight(27), bg(22) on lines mentioned
+
+
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GLIDE_WALLPAPER);
+  pWallpaper.resolution(A3);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 50;
+}
+  
+function wallpaper_background() {
+  background(20, 255, 255); //bg
+  for (x = 0; x < width; x += space) { //scale x input cords
+    for (y = 0; y < height; y += space) { //scale y input cords
+      var n = noiseLevel * noise (x * noiseScale, y * noiseScale);
+      stroke(n * 10, n * 25, n * 50, 25);//colour the noise algorithm
+      strokeWeight(15); //strokeweight
+      if (n<0.5){ //if noise is less than
+      line(x, y, x + size, y + size); //object
+      }
+    }    
+  }
+}
+
+/////////////////////////////////
+
+Wallpaper 5:
+
+//your parameter variables go here!
+let noiseScale = 100;//NoiseScale
+let space = 12; //Size Perlin field;
+let size = 3; //Size of object
+let noiseLevel = 0.8; //NoiseLevel
+//update colour(26), strokeweight(27), bg(22) on lines mentioned
+
+
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GLIDE_WALLPAPER);
+  pWallpaper.resolution(A3);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 50;
+}
+  
+function wallpaper_background() {
+  background(255, 225, 2); //bg
+  for (x = 0; x < width; x += space) { //scale x input cords
+    for (y = 0; y < height; y += space) { //scale y input cords
+      var n = noiseLevel * noise (x * noiseScale, y * noiseScale);
+      stroke(n * 1, n * 100, n * 5, 80);//colour the noise algorithm
+      strokeWeight(15); //strokeweight
+      if (n<0.5){ //if noise is less than
+      line(x, y, x + size, y + size); //object
+      }
+    }    
+  }
+}
+
+/////////////////////////////////
+
+Wallpaper 6:
+
+//your parameter variables go here!
+let noiseScale = 150;//NoiseScale
+let space = 12; //Size Perlin field;
+let size = 15; //Size of object
+let noiseLevel = 1; //NoiseLevel
+//update colour(26), strokeweight(27), bg(22) on lines mentioned
+
+
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GLIDE_WALLPAPER);
+  pWallpaper.resolution(A3);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 50;
+}
+  
+function wallpaper_background() {
+  background(255, 25, 2); //bg
+  for (x = 0; x < width; x += space) { //scale x input cords
+    for (y = 0; y < height; y += space) { //scale y input cords
+      var n = noiseLevel * noise (x * noiseScale, y * noiseScale);
+      stroke(n * 225, n * 15, n * 5, 100);//colour the noise algorithm
+      strokeWeight(12); //strokeweight
+      if (n<0.5){ //if noise is less than
+      line(x, y, x + size, y + size); //object
+      }
+    }    
+  }
+}
+
+/////////////////////////////////
+
+Wallpaper 7:
+
+//your parameter variables go here!
+let noiseScale = 300;//NoiseScale
+let space = 10; //Size Perlin field;
+let size = 15; //Size of object
+let noiseLevel = 0.9; //NoiseLevel
+//update colour(26), strokeweight(27), bg(22) on lines mentioned
+
+
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GLIDE_WALLPAPER);
+  pWallpaper.resolution(A3);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 50;
+}
+  
+function wallpaper_background() {
+  background(25, 25, 255); //bg
+  for (x = 0; x < width; x += space) { //scale x input cords
+    for (y = 0; y < height; y += space) { //scale y input cords
+      var n = noiseLevel * noise (x * noiseScale, y * noiseScale);
+      stroke(n * 25, n * 15, n * 5, 80);//colour the noise algorithm
+      strokeWeight(12); //strokeweight
+      if (n<0.5){ //if noise is less than
+      line(x, y, x + size, y + size); //object
+      }
+    }    
+  }
+}
+
+/////////////////////////////////
+
+Wallpaper 8:
+
+//your parameter variables go here!
+let noiseScale = 20;//NoiseScale
+let space = 12; //Size Perlin field;
+let size = 25; //Size of object
+let noiseLevel = 1.1; //NoiseLevel
+//update colour(26), strokeweight(27), bg(22) on lines mentioned
+
+
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GLIDE_WALLPAPER);
+  pWallpaper.resolution(A3);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 50;
+}
+  
+function wallpaper_background() {
+  background(233, 245, 235); //bg
+  for (x = 0; x < width; x += space) { //scale x input cords
+    for (y = 0; y < height; y += space) { //scale y input cords
+      var n = noiseLevel * noise (x * noiseScale, y * noiseScale);
+      stroke(n * 235, n * 253, n * 153, 100);//colour the noise algorithm
+      strokeWeight(12); //strokeweight
+      if (n<0.5){ //if noise is less than
+      line(x, y, x + size, y + size); //object
+      }
+    }    
+  }
+}
+
+/////////////////////////////////
+
+Wallpaper 9:
+
+//your parameter variables go here!
+let noiseScale = 20;//NoiseScale
+let space = 12; //Size Perlin field;
+let size = 25; //Size of object
+let noiseLevel = 1.1; //NoiseLevel
+//update colour(26), strokeweight(27), bg(22) on lines mentioned
+
+
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GLIDE_WALLPAPER);
+  pWallpaper.resolution(A3);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 50;
+}
+  
+function wallpaper_background() {
+  background(23, 2, 25); //bg
+  for (x = 0; x < width; x += space) { //scale x input cords
+    for (y = 0; y < height; y += space) { //scale y input cords
+      var n = noiseLevel * noise (x * noiseScale, y * noiseScale);
+      stroke(n * 235, n * 253, n * 255, 150);//colour the noise algorithm
+      strokeWeight(12); //strokeweight
+      if (n<0.5){ //if noise is less than
+      line(x, y, x + size, y + size); //object
+      }
+    }    
+  }
 }
